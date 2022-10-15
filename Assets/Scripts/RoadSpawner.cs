@@ -37,6 +37,6 @@ public class RoadSpawner : MonoBehaviour
     private void SpawnObjectsOnThirdRoad()
     {
         var thirdRoad = roads[2];
-        thirdRoad.GetComponent<ObjectSpawner>().SpawnObstacles();
+        thirdRoad.GetComponent<ObjectSpawner>().SpawnObjects();
     }
 }

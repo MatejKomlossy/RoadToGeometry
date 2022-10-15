@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestCharacterController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     public float movementSpeed = 10f;
     public SpawnManager spawnManager;
