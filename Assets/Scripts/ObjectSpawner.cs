@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be called from RoadSpawner
 {
-    private RoadSpawner _roadSpawner;
+    public GameObject obstacle;     //can be a List later on
+    public List<GameObject> positionHolders;
+
     // Start is called before the first frame update
     void Start()
     {
-        _roadSpawner = GetComponent<RoadSpawner>();
+
     }
 
     // Update is called once per frame
@@ -17,8 +19,8 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    public void SpawnTriggerEntered()
+    public void SpawnObstacles()
     {
-        _roadSpawner.OnSpawnTriggerEntered();
+        
     }
 }

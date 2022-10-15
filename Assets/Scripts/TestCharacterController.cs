@@ -21,6 +21,16 @@ public class TestCharacterController : MonoBehaviour
         {
             transform.position += Vector3.forward * (Time.deltaTime * movementSpeed);    
         }
+        
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.position += Vector3.left * (Time.deltaTime * movementSpeed);    
+        }
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.position += Vector3.right * (Time.deltaTime * movementSpeed);    
+        }
     }
 
     private void OnTriggerEnter(Collider other)
