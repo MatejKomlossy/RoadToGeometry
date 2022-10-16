@@ -264,8 +264,8 @@ GameObject:
   - component: {fileID: 732748876}
   - component: {fileID: 732748875}
   - component: {fileID: 732748874}
-  - component: {fileID: 732748873}
   - component: {fileID: 732748877}
+  - component: {fileID: 732748878}
   m_Layer: 0
   m_Name: Test Player
   m_TagString: Untagged
@@ -289,20 +289,6 @@ Transform:
   m_Father: {fileID: 907292808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &732748873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732748871}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b193c18e2fc23bc4d8c62c32ba499cb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardMovementSpeed: 10
-  spawnManager: {fileID: 1217069910}
 --- !u!65 &732748874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -382,6 +368,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &732748878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732748871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b193c18e2fc23bc4d8c62c32ba499cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardMovementSpeed: 10
+  spawnManager: {fileID: 1217069910}
+  playerMinX: 7.1
+  playerMaxX: 11.8
 --- !u!1 &907292807
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,9 +472,9 @@ MonoBehaviour:
   m_Device: 0
   m_PoseSource: 2
   m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
+  m_TrackingType: 1
   m_UpdateType: 0
-  m_UseRelativeTransform: 0
+  m_UseRelativeTransform: 1
 --- !u!124 &959308591
 Behaviour:
   m_ObjectHideFlags: 0
@@ -531,8 +533,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959308587}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05300045, y: 1.2639999, z: -3}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.14, z: -4.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

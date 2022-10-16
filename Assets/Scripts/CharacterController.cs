@@ -10,10 +10,10 @@ public class CharacterController : MonoBehaviour
 
     public float playerMinX = 7.1f;
     public float playerMaxX = 11.8f;
-    private const float MinAnglesLeft = 190;
-    private const float MaxAnglesLeft = 350;
-    private const float MinAnglesRight = 10;
-    private const float MaxAnglesRight = 70;
+    private const float MinAnglesLeft = 10;
+    private const float MaxAnglesLeft = 70;
+    private const float MinAnglesRight = 190;
+    private const float MaxAnglesRight = 350;
 
     // Update is called once per frame
     void Update()
@@ -25,16 +25,16 @@ public class CharacterController : MonoBehaviour
         
         float sideMovementSpeed = forwardMovementSpeed / 5;
         
-        if (currentEulerAngles.z > MinAnglesLeft && currentEulerAngles.z < MaxAnglesLeft)
+        if (currentEulerAngles.z > MinAnglesRight && currentEulerAngles.z < MaxAnglesRight)
         {
-            if (transform.position.x > playerMinX)
+            if (transform.position.x < playerMaxX)
             {
                 transform.position -= Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the right, comrades
             }
         }
-        else if (currentEulerAngles.z > MinAnglesRight && currentEulerAngles.z < MaxAnglesRight)
+        else if (currentEulerAngles.z > MinAnglesLeft && currentEulerAngles.z < MaxAnglesLeft)
         {
-            if (transform.position.x < playerMaxX)
+            if (transform.position.x > playerMinX)
             {
                 transform.position += Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the left, comrades
             }
