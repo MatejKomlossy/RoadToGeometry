@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public float movementSpeed = 10f;
+    public float forwardMovementSpeed = 10f;
     public SpawnManager spawnManager;
     
     // Start is called before the first frame update
@@ -17,19 +17,26 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W))
+        transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed); //forward, comrades
+
+        Quaternion headRotation = Camera.main.transform.rotation;
+        Vector3 currentEulerAngles = headRotation.eulerAngles;
+
+        float sideMovementSpeed = forwardMovementSpeed / 5;
+
+        if (currentEulerAngles.z > 190 && currentEulerAngles.z < 350)
         {
-            transform.position += Vector3.forward * (Time.deltaTime * movementSpeed);    
+            if (transform.position.x > -20) //NEFUNGUJE ta hranica
+            {
+                transform.position -= Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the right, comrades
+            }
         }
-        
-        if (Input.GetKey(KeyCode.A))
+        else if (currentEulerAngles.z > 10 && currentEulerAngles.z < 70)
         {
-            transform.position += Vector3.left * (Time.deltaTime * movementSpeed);    
-        }
-        
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * (Time.deltaTime * movementSpeed);    
+            if (transform.position.x < 20) //NEFUNGUJE ta hranica
+            {
+                transform.position += Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the left, comrades
+            }
         }
     }
 
