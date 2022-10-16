@@ -795,8 +795,8 @@ MonoBehaviour:
   - {fileID: 2884971022121630469}
   - {fileID: 7949313805378046208}
   - {fileID: 1491225030818469564}
-  obstacleParent: {fileID: 8525477542066225516}
-  collectibleParent: {fileID: 8279674697980549674}
+  obstacleParent: {fileID: 7306501673701520241}
+  collectibleParent: {fileID: 8658272510724787887}
 --- !u!1 &7037913278352492688
 GameObject:
   m_ObjectHideFlags: 0

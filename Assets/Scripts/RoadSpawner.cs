@@ -20,23 +20,25 @@ public class RoadSpawner : MonoBehaviour
 
     public void OnSpawnTriggerEntered()
     {
-        MoveRoad();
-        SpawnObjectsOnThirdRoad();
+        var movedRoad = MoveAndClearRoad();
+        SpawnObjectsOnRoad(movedRoad);
     }
 
-    private void MoveRoad()
+    private GameObject MoveAndClearRoad()   //returns moved road
     {
         var movedRoad = roads[0];
+        movedRoad.GetComponent<ObjectSpawner>().ClearObjects();
         roads.Remove(movedRoad);
+        
         var newZ = roads[^1].transform.position.z + Offset;     //last road (first from end)
         movedRoad.transform.position = new Vector3(0, 0, newZ);
+        
         roads.Add(movedRoad);
+        return movedRoad;
     }
-
-    //select the third road, call it's spawn function(s)
-    private void SpawnObjectsOnThirdRoad()
+    
+    private void SpawnObjectsOnRoad(GameObject road)
     {
-        var thirdRoad = roads[2];
-        thirdRoad.GetComponent<ObjectSpawner>().SpawnObjects();
+        road.GetComponent<ObjectSpawner>().SpawnObjects();
     }
 }

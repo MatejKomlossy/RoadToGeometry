@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using System.Linq;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be called from RoadSpawner
@@ -33,7 +34,8 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     {
         var index = _random.Next(availablePosHolders.Count);
         var posHolder = availablePosHolders[index];
-        Instantiate(objectToSpawn, parent);
+        var objectInstance = Instantiate(objectToSpawn, parent);
+        objectInstance.transform.position = posHolder.transform.position;
         return posHolder;
     }
 
@@ -80,10 +82,17 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
         return new List<GameObject>(); //implement
     }
 
+    //Clears obstacles and collectibles. Called when moving road
     public void ClearObjects()
     {
-        //implement
-        //clear obstacles and collectibles
-        //call this when moving road
+        foreach (Transform child in obstacleParent)
+        {
+            Destroy(child.gameObject);
+        }
+        
+        foreach (Transform child in collectibleParent)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }
