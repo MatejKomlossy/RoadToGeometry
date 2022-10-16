@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestCharacterController : MonoBehaviour
+public class CharacterController : MonoBehaviour
 {
     public float forwardMovementSpeed = 10f;
     public SpawnManager spawnManager;
@@ -38,11 +38,6 @@ public class TestCharacterController : MonoBehaviour
                 transform.position += Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the left, comrades
             }
         }
-
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    transform.position += Vector3.forward * (Time.deltaTime * movementSpeed);    
-        //}
     }
 
     private void OnTriggerEnter(Collider other)

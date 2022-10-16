@@ -19,6 +19,6 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnTriggerEntered()
     {
-        _roadSpawner.MoveRoad();
+        _roadSpawner.OnSpawnTriggerEntered();
     }
 }
