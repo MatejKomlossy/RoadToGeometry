@@ -7,37 +7,52 @@ public class CharacterController : MonoBehaviour
 {
     public float forwardMovementSpeed = 10f;
     public SpawnManager spawnManager;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    public float playerMinX = 7.1f;
+    public float playerMaxX = 11.8f;
+    private const float MinAnglesLeft = 190;
+    private const float MaxAnglesLeft = 350;
+    private const float MinAnglesRight = 10;
+    private const float MaxAnglesRight = 70;
 
     // Update is called once per frame
     void Update()
     {
         transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed); //forward, comrades
-
+        
         Quaternion headRotation = Camera.main.transform.rotation;
         Vector3 currentEulerAngles = headRotation.eulerAngles;
-
+        
         float sideMovementSpeed = forwardMovementSpeed / 5;
-
-        if (currentEulerAngles.z > 190 && currentEulerAngles.z < 350)
+        
+        if (currentEulerAngles.z > MinAnglesLeft && currentEulerAngles.z < MaxAnglesLeft)
         {
-            if (transform.position.x > -20) //NEFUNGUJE ta hranica
+            if (transform.position.x > playerMinX)
             {
                 transform.position -= Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the right, comrades
             }
         }
-        else if (currentEulerAngles.z > 10 && currentEulerAngles.z < 70)
+        else if (currentEulerAngles.z > MinAnglesRight && currentEulerAngles.z < MaxAnglesRight)
         {
-            if (transform.position.x < 20) //NEFUNGUJE ta hranica
+            if (transform.position.x < playerMaxX)
             {
                 transform.position += Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the left, comrades
             }
         }
+        // if (Input.GetKey(KeyCode.W))
+        // {
+        //     transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed);   
+        // }
+        // if (Input.GetKey(KeyCode.A))
+        // {
+        //     if(transform.position.x > playerMinX)
+        //         transform.position += Vector3.left * (Time.deltaTime * forwardMovementSpeed);    
+        // }
+        // if (Input.GetKey(KeyCode.D))
+        // {
+        //     if(transform.position.x < playerMaxX)
+        //         transform.position += Vector3.right * (Time.deltaTime * forwardMovementSpeed);
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
