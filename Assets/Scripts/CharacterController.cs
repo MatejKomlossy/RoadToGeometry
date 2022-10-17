@@ -8,8 +8,8 @@ public class CharacterController : MonoBehaviour
     public float forwardMovementSpeed = 10f;
     public SpawnManager spawnManager;
 
-    public float playerMinX = 7.1f;
-    public float playerMaxX = 11.8f;
+    public float playerMinX = 7.6f;
+    public float playerMaxX = 11.3f;
     private const float MinAnglesLeft = 10;
     private const float MaxAnglesLeft = 70;
     private const float MinAnglesRight = 190;
