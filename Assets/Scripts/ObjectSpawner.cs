@@ -15,6 +15,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
 
     private const int NumOfCollectibles = 2;
     private const int NumOfObstacles = 2;
+    private const int ObstacleSpawnHeight = 5;
     
     static System.Random _random = new System.Random();
 
@@ -35,7 +36,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
         var index = _random.Next(availablePosHolders.Count);
         var posHolder = availablePosHolders[index];
         var objectInstance = Instantiate(objectToSpawn, parent);
-        objectInstance.transform.position = posHolder.transform.position;
+        objectInstance.transform.position = posHolder.transform.position + Vector3.up * ObstacleSpawnHeight;
         return posHolder;
     }
 
@@ -75,7 +76,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     private GameObject SpawnCollectible(List<GameObject> availablePosHolders)   //returns posHolder
     {
         return null; //implement similar to SpawnObstacle
-    }
+    }   //note: collectibles should have trigger colliders and shouldn't use gravity
     
     private List<GameObject> PosHoldersAfterCollectible(List<GameObject> availablePosHolders, GameObject usedPosHolder)
     {
