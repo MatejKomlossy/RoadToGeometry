@@ -39,24 +39,30 @@ public class CharacterController : MonoBehaviour
                 transform.position += Vector3.left * (Time.deltaTime * sideMovementSpeed); //to the left, comrades
             }
         }
-        // if (Input.GetKey(KeyCode.W))
-        // {
-        //     transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed);   
-        // }
-        // if (Input.GetKey(KeyCode.A))
-        // {
-        //     if(transform.position.x > playerMinX)
-        //         transform.position += Vector3.left * (Time.deltaTime * forwardMovementSpeed);    
-        // }
-        // if (Input.GetKey(KeyCode.D))
-        // {
-        //     if(transform.position.x < playerMaxX)
-        //         transform.position += Vector3.right * (Time.deltaTime * forwardMovementSpeed);
-        // }
+        
+        
+        //PC
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed);   
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            if(transform.position.x > playerMinX)
+                transform.position += Vector3.left * (Time.deltaTime * forwardMovementSpeed);    
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            if(transform.position.x < playerMaxX)
+                transform.position += Vector3.right * (Time.deltaTime * forwardMovementSpeed);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        spawnManager.SpawnTriggerEntered();
+        if (other.CompareTag("SpawnTrigger"))
+        {
+            spawnManager.SpawnTriggerEntered();    
+        }
     }
 }
