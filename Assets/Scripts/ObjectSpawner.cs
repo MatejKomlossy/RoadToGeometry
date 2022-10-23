@@ -9,6 +9,7 @@ using UnityEngine;
 public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be called from RoadSpawner
 {
     public GameObject obstacle;     //can be a List later on
+    public List<GameObject> collectibles;           //4
     public List<GameObject> positionHolders;        //10
     public Transform obstacleParent;
     public Transform collectibleParent;
@@ -16,6 +17,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     private const int NumOfCollectibles = 2;
     private const int NumOfObstacles = 2;
     private const int ObstacleSpawnHeight = 5;
+    private const float CollectibleSpawnHeight = 0.5f;
     
     static System.Random _random = new System.Random();
 
@@ -31,12 +33,12 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
         SpawnCollectibles(availablePosHolders);
     }
     
-    private GameObject SpawnObject(List<GameObject> availablePosHolders, GameObject objectToSpawn, Transform parent)
+    private GameObject SpawnObject(List<GameObject> availablePosHolders, GameObject objectToSpawn, Transform parent, Vector3 shift)
     {
         var index = _random.Next(availablePosHolders.Count);
         var posHolder = availablePosHolders[index];
         var objectInstance = Instantiate(objectToSpawn, parent);
-        objectInstance.transform.position = posHolder.transform.position + Vector3.up * ObstacleSpawnHeight;
+        objectInstance.transform.position = posHolder.transform.position + shift;
         return posHolder;
     }
 
@@ -54,7 +56,8 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
 
     private GameObject SpawnObstacle(List<GameObject> availablePosHolders)  //returns posHolder
     {
-        return SpawnObject(availablePosHolders, obstacle, obstacleParent);
+        var shift = Vector3.up * ObstacleSpawnHeight;
+        return SpawnObject(availablePosHolders, obstacle, obstacleParent, shift);
     }
     
     private List<GameObject> PosHoldersAfterObstacle(List<GameObject> availablePosHolders, GameObject usedPosHolder)
@@ -73,14 +76,19 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
         }
     }
     
+    //note: collectibles should have trigger colliders and shouldn't use gravity
     private GameObject SpawnCollectible(List<GameObject> availablePosHolders)   //returns posHolder
     {
-        return null; //implement similar to SpawnObstacle
-    }   //note: collectibles should have trigger colliders and shouldn't use gravity
+        var index = _random.Next(collectibles.Count);
+        var shift = Vector3.up * CollectibleSpawnHeight;
+        return SpawnObject(availablePosHolders, collectibles[index], collectibleParent, shift);
+    }   
     
     private List<GameObject> PosHoldersAfterCollectible(List<GameObject> availablePosHolders, GameObject usedPosHolder)
     {
-        return new List<GameObject>(); //implement
+        var result = new List<GameObject>(availablePosHolders);
+        result.Remove(usedPosHolder);
+        return result;
     }
 
     //Clears obstacles and collectibles. Called when moving road
