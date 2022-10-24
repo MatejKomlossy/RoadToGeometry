@@ -23,28 +23,26 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
 
     private bool FloatEquals(float value1, float value2)
     {
-        var difference = Math.Abs(value1 * 0.01f);
-        return Math.Abs(value1 - value2) <= difference;
+        return Math.Abs(value1 - value2) <= 0.01f;
     }
 
     public void SpawnObjects()
     {
-        var availablePosHolders = SpawnObstacles();
+        var availablePosHolders = SpawnObstacles(new List<GameObject>(positionHolders));
         SpawnCollectibles(availablePosHolders);
     }
     
     private GameObject SpawnObject(List<GameObject> availablePosHolders, GameObject objectToSpawn, Transform parent, Vector3 shift)
     {
         var index = _random.Next(availablePosHolders.Count);
-        var posHolder = availablePosHolders[index];
+        var usedPosHolder = availablePosHolders[index];
         var objectInstance = Instantiate(objectToSpawn, parent);
-        objectInstance.transform.position = posHolder.transform.position + shift;
-        return posHolder;
+        objectInstance.transform.position = usedPosHolder.transform.position + shift;
+        return usedPosHolder;
     }
 
-    private List<GameObject> SpawnObstacles()
+    private List<GameObject> SpawnObstacles(List<GameObject> availablePosHolders)
     {
-        var availablePosHolders = new List<GameObject>(positionHolders);
         for (int i = 0; i < NumOfObstacles; i++)
         {
             var usedPosHolder = SpawnObstacle(availablePosHolders);
@@ -86,9 +84,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     
     private List<GameObject> PosHoldersAfterCollectible(List<GameObject> availablePosHolders, GameObject usedPosHolder)
     {
-        var result = new List<GameObject>(availablePosHolders);
-        result.Remove(usedPosHolder);
-        return result;
+        return availablePosHolders.Where(ph => ph != usedPosHolder).ToList();
     }
 
     //Clears obstacles and collectibles. Called when moving road
