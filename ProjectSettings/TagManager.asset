@@ -16,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Pointer
   - 
   - 
   - 
@@ -45,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2455829557
+    locked: 0
+  - name: Pointer
+    uniqueID: 3461947367
     locked: 0
