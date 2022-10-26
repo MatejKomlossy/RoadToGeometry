@@ -14,7 +14,7 @@ public class CharacterController : MonoBehaviour
     private const float MaxAnglesLeft = 70;
     private const float MinAnglesRight = 190;
     private const float MaxAnglesRight = 350;
-
+    
     // Update is called once per frame
     void Update()
     {

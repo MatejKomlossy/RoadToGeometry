@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnTrigger
+  - Capsule
+  - Cube
+  - Sphere
+  - Cylinder
   layers:
   - Default
   - TransparentFX
