@@ -34,15 +34,15 @@ public class Pointer : MonoBehaviour
             {
                 if (objectInSight != null)
                 {
-                    changeObjectColor(normalColor);
+                    ChangeObjectColor(normalColor);
                 }
                 objectInSight = hit.transform.gameObject;
-                changeObjectColor(activeColor);
+                ChangeObjectColor(activeColor);
             }
         }
         else
         {
-            changeObjectColor(normalColor);
+            ChangeObjectColor(normalColor);
             objectInSight = null;
         }
 
@@ -76,7 +76,7 @@ public class Pointer : MonoBehaviour
         }
     }
 
-    private void changeObjectColor(Color color)
+    private void ChangeObjectColor(Color color)
     {
         Image img = null;
         if (objectInSight.TryGetComponent<Image>(out img))
@@ -92,7 +92,7 @@ public class Pointer : MonoBehaviour
 
     public void PlayLevel2()
     {
-        //SceneManager.LoadScene("Level2");
+        SceneManager.LoadScene("Level2");
     }
 
     public void Explore()
