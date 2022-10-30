@@ -8,13 +8,13 @@ namespace Tasks
     {
         public List<GameObject> ObjectPrefabs;
         
-        private Dictionary<string, int> _objectsToCollect;  //tag, count
+        private Dictionary<string, int> _objectsToCollect;  //<tag, count>
         private const int MaxObjectKinds = 4;
         private const int MaxOneObjectCount = 3;
         private static System.Random _random = new System.Random();
         private const float ChanceToAddObject = 0.5f;
         private const int PointsPerObject = 10;
-        private int _points = 0;
+        public int Points { get; private set; }
         
         public Task()
         {
@@ -55,7 +55,7 @@ namespace Tasks
 
             if (IsCompleted())
             {
-                EventManager.Instance.TaskCompleted(_points);
+                EventManager.Instance.TaskCompleted(this);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Tasks
         {
             foreach (var objectCount in _objectsToCollect)
             {
-                _points += objectCount.Value * PointsPerObject;
+                Points += objectCount.Value * PointsPerObject;
             }
         }
 

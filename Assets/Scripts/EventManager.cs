@@ -1,12 +1,13 @@
 ﻿using System;
 using JetBrains.Annotations;
+using Tasks;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
 
-    [CanBeNull] public event Action<int> TaskCompletedEvent; 
+    [CanBeNull] public event Action<Task> TaskCompletedEvent; 
 
     private void Awake()
     {
@@ -21,8 +22,8 @@ public class EventManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void TaskCompleted(int points)
+    public void TaskCompleted(Task task)
     {
-        TaskCompletedEvent?.Invoke(points);
+        TaskCompletedEvent?.Invoke(task);
     }
 }
