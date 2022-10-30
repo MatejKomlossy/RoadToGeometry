@@ -6,30 +6,34 @@ namespace Tasks
 {
     public class Task
     {
-        public List<GameObject> ObjectPrefabs;
+        private readonly List<GameObject> _objectPrefabs;
         
-        private Dictionary<string, int> _objectsToCollect;  //<tag, count>
+        private Dictionary<string, int> _objectsToCollect = new();  //<tag, count>
+        private Dictionary<string, string> _tagsHints;  //<tag, hint>
         private const int MaxObjectKinds = 4;
         private const int MaxOneObjectCount = 3;
-        private static System.Random _random = new System.Random();
+        private static System.Random _random;
         private const float ChanceToAddObject = 0.5f;
         private const int PointsPerObject = 10;
         public int Points { get; private set; }
         
-        public Task()
+        public Task(List<GameObject> objectPrefabs, Dictionary<string, string> tagsHints)
         {
+            _random = new System.Random();
+            _objectPrefabs = objectPrefabs;
+            _tagsHints = tagsHints;
             FillObjectsToCollect();
             ComputePoints();
         }
 
         private void FillObjectsToCollect()
         {
-            var index = _random.Next(ObjectPrefabs.Count);
-            var firstObject = ObjectPrefabs[index];
-            _objectsToCollect.Add(firstObject.tag, 0);
+            var index = _random.Next(_objectPrefabs.Count);
+            var firstObject = _objectPrefabs[index];
+            _objectsToCollect.Add(firstObject.tag, RandomObjectCount());
             var objectKinds = 1;
             
-            var rest = ObjectPrefabs.Where(o => !o.CompareTag(firstObject.tag)).ToList();
+            var rest = _objectPrefabs.Where(o => !o.CompareTag(firstObject.tag)).ToList();
             foreach (var objectPrefab in rest)
             {
                 if (objectKinds > MaxObjectKinds)
@@ -38,11 +42,15 @@ namespace Tasks
                 }
                 if (_random.NextDouble() <= ChanceToAddObject)
                 {
-                    var count = _random.Next(MaxOneObjectCount) + 1;
-                    _objectsToCollect.Add(objectPrefab.tag, count);
+                    _objectsToCollect.Add(objectPrefab.tag, RandomObjectCount());
                     objectKinds++;
                 }
             }
+        }
+
+        private int RandomObjectCount()
+        {
+            return  _random.Next(MaxOneObjectCount) + 1;
         }
 
         public void Collect(GameObject collectible)
@@ -76,11 +84,10 @@ namespace Tasks
         public List<string> TaskStrings()   //can be displayed in rows
         {
             var result = new List<string>();
-            foreach (var objectCount in _objectsToCollect)
+            foreach (var (tagStr, count) in _objectsToCollect)
             {
-                var tag = objectCount.Key;
-                var gameObject = ObjectPrefabs.Find(op => op.CompareTag(tag));
-                result.Add(objectCount.Value + " x " + gameObject.GetComponent<Collectible>().Name);
+                var go = _objectPrefabs.Find(op => op.CompareTag(tagStr));
+                result.Add(count + " x " + _tagsHints[go.tag]);
             }
 
             return result;
