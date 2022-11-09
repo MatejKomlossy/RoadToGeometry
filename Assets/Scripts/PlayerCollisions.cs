@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PlayerCollisions : MonoBehaviour
 {
+
+    public AudioSource obstacleCollisionSound;
+
     private void CubeCollected()
     {
         
@@ -47,5 +50,11 @@ public class PlayerCollisions : MonoBehaviour
             CapsuleCollected();
             Destroy(other.gameObject);
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        transform.GetComponent<GameOver>().EndGame();
+        obstacleCollisionSound.Play();
     }
 }

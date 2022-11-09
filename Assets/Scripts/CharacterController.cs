@@ -18,6 +18,12 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (transform.GetComponent<GameOver>().isGameOver) //do not move after Game Over
+        {
+            return;
+        }
+
         transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed); //forward, comrades
         
         Quaternion headRotation = Camera.main.transform.rotation;
@@ -41,7 +47,7 @@ public class CharacterController : MonoBehaviour
         }
         
         
-        //PC
+        // PC
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed);   
