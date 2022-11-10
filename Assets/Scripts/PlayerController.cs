@@ -3,25 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float forwardMovementSpeed = 10f;
     public SpawnManager spawnManager;
 
     public float playerMinX = 7.6f;
     public float playerMaxX = 11.3f;
+
     private const float MinAnglesLeft = 10;
     private const float MaxAnglesLeft = 70;
     private const float MinAnglesRight = 190;
     private const float MaxAnglesRight = 350;
-    
+
+    private float decelerationSpeed = 0.2f;
+
     // Update is called once per frame
     void Update()
     {
 
-        if (transform.GetComponent<GameOver>().isGameOver) //do not move after Game Over
+        if (transform.GetComponent<GameOver>().isGameOver) //slow down after Game Over
         {
-            return;
+            if (forwardMovementSpeed > 0.0f)
+            {
+                transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed);
+                forwardMovementSpeed -= decelerationSpeed;
+            }
         }
 
         transform.position += Vector3.forward * (Time.deltaTime * forwardMovementSpeed); //forward, comrades
