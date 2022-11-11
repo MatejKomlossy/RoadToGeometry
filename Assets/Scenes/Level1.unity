@@ -418,6 +418,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardMovementSpeed: 10
   spawnManager: {fileID: 1217069910}
+  kontrola1: {fileID: 1213217258}
+  kontrola2: {fileID: 1070905622}
   playerMinX: 7.6
   playerMaxX: 11.3
 --- !u!54 &323946528
