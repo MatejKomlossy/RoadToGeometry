@@ -9,6 +9,7 @@ TagManager:
   - Cube
   - Sphere
   - Cylinder
+  - Obstacle
   layers:
   - Default
   - TransparentFX

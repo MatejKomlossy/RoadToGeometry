@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 263458310307509985}
   - component: {fileID: -5288154963851452354}
   - component: {fileID: 7769311475390323026}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder
   m_TagString: Cylinder
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5f0bba1771f1a744d8029f6d7ff49acc, type: 2}
+  - {fileID: 2100000, guid: cf865a69069228c4e83720c90582ae2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
