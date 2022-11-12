@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace Tasks
 {
     public class TaskManager : MonoBehaviour
     {
+        public TextMeshProUGUI taskText, scoreText;
         public List<GameObject> objectPrefabs;
         public List<string> cubeHints;
         public List<string> sphereHints;
@@ -36,10 +38,10 @@ namespace Tasks
             _collectiblesHints.Add(CapsuleTag, capsuleHints);
         }
 
-        private void DisplayTask(Task task)     
+        private void DisplayTask(Task task)
         {
-            //implement
-            Debug.Log(string.Join("\n", task.TaskStrings()));
+            var textToDisplay = string.Join("\n", task.TaskStrings());
+
         }
 
         private Task CreateNewTask()

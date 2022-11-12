@@ -56,7 +56,7 @@ namespace Tasks
         public void Collect(GameObject collectible)
         {
             var tag = collectible.tag;
-            if (_objectsToCollect[tag] > 0)
+            if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
             {
                 _objectsToCollect[tag] -= 1;
             }
