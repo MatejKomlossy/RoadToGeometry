@@ -86,8 +86,7 @@ namespace Tasks
             var result = new List<string>();
             foreach (var (tagStr, count) in _objectsToCollect)
             {
-                var go = _objectPrefabs.Find(op => op.CompareTag(tagStr));
-                result.Add(count + " x " + _tagsHints[go.tag]);
+                result.Add(count + "x " + _tagsHints[tagStr]);
             }
 
             return result;

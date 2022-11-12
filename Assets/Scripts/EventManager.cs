@@ -7,9 +7,10 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance { get; private set; }
 
-    [CanBeNull] public event Action<Task> TaskCompletedEvent; 
+    public event Action<Task> TaskCompletedEvent;
+    public event Action<GameObject> ObjectCollectedEvent;
 
-    private void Awake()
+    private void Awake()    //Singleton
     {
         if (Instance == null)
         {
@@ -25,5 +26,10 @@ public class EventManager : MonoBehaviour
     public void TaskCompleted(Task task)
     {
         TaskCompletedEvent?.Invoke(task);
+    }
+    
+    public void ObjectCollected(GameObject go)
+    {
+        ObjectCollectedEvent?.Invoke(go);
     }
 }
