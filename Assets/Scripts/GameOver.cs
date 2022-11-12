@@ -32,6 +32,7 @@ public class GameOver : MonoBehaviour
     public void EndGame()
     {
         isGameOver = true;
+        EventManager.Instance.GameOver();
         scoreAndTasks.SetActive(false);
 
         Vector3 previousPosition = gameOver.transform.position;

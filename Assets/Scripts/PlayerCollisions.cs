@@ -7,48 +7,21 @@ public class PlayerCollisions : MonoBehaviour
 {
 
     public AudioSource obstacleCollisionSound;
-
-    private void CubeCollected()
-    {
-        
-    }
-
-    private void SphereCollected()
-    {
-        
-    }
-
-    private void CylinderCollected()
-    {
-        
-    }
-    
-    private void CapsuleCollected()
-    {
-        
-    }
+    private const string CubeTag = "Cube";
+    private const string SphereTag = "Sphere";
+    private const string CylinderTag = "Cylinder";
+    private const string CapsuleTag = "Capsule";
+    private readonly string[] _collectibleTags = {CubeTag, SphereTag, CylinderTag, CapsuleTag};
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Cube"))
+        foreach (var tagStr in _collectibleTags)
         {
-            CubeCollected();
-            Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("Sphere"))
-        {
-            SphereCollected();
-            Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("Cylinder"))
-        {
-            CylinderCollected();
-            Destroy(other.gameObject);
-        }
-        else if (other.CompareTag("Capsule"))
-        {
-            CapsuleCollected();
-            Destroy(other.gameObject);
+            if (other.CompareTag(tagStr))
+            {
+                EventManager.Instance.ObjectCollected(other.gameObject);
+                Destroy(other.gameObject);
+            }
         }
     }
 

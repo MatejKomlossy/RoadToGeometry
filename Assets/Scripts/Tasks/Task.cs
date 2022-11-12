@@ -10,7 +10,7 @@ namespace Tasks
         
         private Dictionary<string, int> _objectsToCollect = new();  //<tag, count>
         private Dictionary<string, string> _tagsHints;  //<tag, hint>
-        private const int MaxObjectKinds = 4;
+        private const int MaxObjectKinds = 3;
         private const int MaxOneObjectCount = 3;
         private static System.Random _random;
         private const float ChanceToAddObject = 0.5f;
@@ -36,7 +36,7 @@ namespace Tasks
             var rest = _objectPrefabs.Where(o => !o.CompareTag(firstObject.tag)).ToList();
             foreach (var objectPrefab in rest)
             {
-                if (objectKinds > MaxObjectKinds)
+                if (objectKinds >= MaxObjectKinds)
                 {
                     return;
                 }
@@ -56,7 +56,7 @@ namespace Tasks
         public void Collect(GameObject collectible)
         {
             var tag = collectible.tag;
-            if (_objectsToCollect[tag] > 0)
+            if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
             {
                 _objectsToCollect[tag] -= 1;
             }
@@ -86,8 +86,8 @@ namespace Tasks
             var result = new List<string>();
             foreach (var (tagStr, count) in _objectsToCollect)
             {
-                var go = _objectPrefabs.Find(op => op.CompareTag(tagStr));
-                result.Add(count + " x " + _tagsHints[go.tag]);
+                if(count <= 0) continue;
+                result.Add(count + "x " + _tagsHints[tagStr]);
             }
 
             return result;
