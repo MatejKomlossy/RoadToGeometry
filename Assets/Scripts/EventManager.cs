@@ -9,6 +9,7 @@ public class EventManager : MonoBehaviour
 
     public event Action<Task> TaskCompletedEvent;
     public event Action<GameObject> ObjectCollectedEvent;
+    public event Action GameOverEvent; 
 
     private void Awake()    //Singleton
     {
@@ -31,5 +32,10 @@ public class EventManager : MonoBehaviour
     public void ObjectCollected(GameObject go)
     {
         ObjectCollectedEvent?.Invoke(go);
+    }
+
+    public void GameOver()
+    {
+        GameOverEvent?.Invoke();
     }
 }

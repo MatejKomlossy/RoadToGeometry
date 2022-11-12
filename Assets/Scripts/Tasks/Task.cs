@@ -10,7 +10,7 @@ namespace Tasks
         
         private Dictionary<string, int> _objectsToCollect = new();  //<tag, count>
         private Dictionary<string, string> _tagsHints;  //<tag, hint>
-        private const int MaxObjectKinds = 4;
+        private const int MaxObjectKinds = 3;
         private const int MaxOneObjectCount = 3;
         private static System.Random _random;
         private const float ChanceToAddObject = 0.5f;
@@ -36,7 +36,7 @@ namespace Tasks
             var rest = _objectPrefabs.Where(o => !o.CompareTag(firstObject.tag)).ToList();
             foreach (var objectPrefab in rest)
             {
-                if (objectKinds > MaxObjectKinds)
+                if (objectKinds >= MaxObjectKinds)
                 {
                     return;
                 }
@@ -86,6 +86,7 @@ namespace Tasks
             var result = new List<string>();
             foreach (var (tagStr, count) in _objectsToCollect)
             {
+                if(count <= 0) continue;
                 result.Add(count + "x " + _tagsHints[tagStr]);
             }
 

@@ -7,7 +7,7 @@ namespace Tasks
 {
     public class TaskManager : MonoBehaviour
     {
-        public TextMeshProUGUI taskText, scoreText;
+        public TextMeshProUGUI taskText, scoreText, gameOverScoreText;
         public List<GameObject> objectPrefabs;
         public List<string> cubeHints;
         public List<string> sphereHints;
@@ -28,6 +28,7 @@ namespace Tasks
             NewCurrentTask();
             EventManager.Instance.TaskCompletedEvent += OnTaskCompleted;
             EventManager.Instance.ObjectCollectedEvent += OnObjectCollected;
+            EventManager.Instance.GameOverEvent += OnGameOver;
         }
 
         private void InitCollectiblesHints()
@@ -40,8 +41,7 @@ namespace Tasks
 
         private void DisplayTask(Task task)
         {
-            var textToDisplay = string.Join("\n", task.TaskStrings());
-
+            taskText.text = string.Join(", ", task.TaskStrings());
         }
 
         private Task CreateNewTask()
@@ -64,7 +64,8 @@ namespace Tasks
 
         private void AddPoints(int points)
         {
-            //implement
+            var score = int.Parse(scoreText.text);
+            scoreText.text = score + points + "";
         }
 
         private void OnObjectCollected(GameObject go)
@@ -73,13 +74,16 @@ namespace Tasks
             DisplayTask(CurrentTask); //number of objects left to collect changes
         }
 
+        private void OnGameOver()
+        {
+            gameOverScoreText.text = scoreText.text;
+        }
+
         private Dictionary<string, string> Hints()
         {
             Dictionary<string, string> tagsHints = new();
-            foreach (var collectibleHint in _collectiblesHints)
+            foreach (var (tagStr, possibleHints) in _collectiblesHints)
             {
-                var tagStr = collectibleHint.Key;
-                var possibleHints = collectibleHint.Value;
                 var randomHint = possibleHints[_random.Next(possibleHints.Count)];
                 tagsHints.Add(tagStr, randomHint);
             }
