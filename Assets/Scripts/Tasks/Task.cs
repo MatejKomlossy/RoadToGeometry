@@ -16,7 +16,10 @@ namespace Tasks
         private const float ChanceToAddObject = 0.5f;
         private const int PointsPerObject = 10;
         public int Points { get; private set; }
-        
+
+        public AudioSource correctObjectCollisionSound = GameObject.Find("CorrectObjectCollision").GetComponent<AudioSource>();
+        public AudioSource wrongObjectCollisionSound = GameObject.Find("WrongObjectCollision").GetComponent<AudioSource>();
+
         public Task(List<GameObject> objectPrefabs, Dictionary<string, string> tagsHints)
         {
             _random = new System.Random();
@@ -59,6 +62,12 @@ namespace Tasks
             if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
             {
                 _objectsToCollect[tag] -= 1;
+                correctObjectCollisionSound.Play();
+
+            }
+            else
+            {
+                wrongObjectCollisionSound.Play();
             }
 
             if (IsCompleted())
