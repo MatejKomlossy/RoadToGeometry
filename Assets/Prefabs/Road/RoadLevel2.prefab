@@ -1111,7 +1111,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed93741c7d2a67b42a8ea7786b839df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 9033970814349918473, guid: 6023c2f16d065fa42bcd52bc30596822, type: 3}
+  obstacles:
+  - {fileID: 185736, guid: 52186bdda5bba224b9772f5a970dc4f1, type: 3}
+  - {fileID: 3647109984710332790, guid: 5cea192c3222ca44b95ae712b69d80a8, type: 3}
+  - {fileID: 148854, guid: f229cd74b301cb842b03ad2eb6c93ab2, type: 3}
+  - {fileID: 117884, guid: 8321858f0bdcf304c9eccc871b032f4c, type: 3}
+  - {fileID: 114438, guid: 9c840074afe9b5140b4c66193daf4ba1, type: 3}
+  - {fileID: 7032112302698976235, guid: 045f4bb01080e984fa78430e6ff8938b, type: 3}
+  - {fileID: 108648, guid: d3ab6a01d9ff4174f8cbb8243729a323, type: 3}
+  - {fileID: 128852, guid: 13363f1ee6fdda1489ab4022366f1d04, type: 3}
+  - {fileID: 467951067566595012, guid: 9aca84b09e438d945a8910e97aff47d5, type: 3}
   collectibles:
   - {fileID: 4631134093718072350, guid: e54d1f7fd6e32c74397ce4fa8acabbf7, type: 3}
   - {fileID: 6966121036707182036, guid: 372201b366003d34394381aca580a7c5, type: 3}
