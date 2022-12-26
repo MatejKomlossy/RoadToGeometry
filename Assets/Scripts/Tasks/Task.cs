@@ -67,6 +67,16 @@ namespace Tasks
             }
         }
 
+        public bool IsObjectFromTheTask(GameObject collectible)
+        {
+            var tag = collectible.tag;
+            if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private bool IsCompleted()
         {
             return _objectsToCollect.Count == 0 ||

@@ -15,7 +15,7 @@ namespace Tasks
         public List<string> capsuleHints;
         private Dictionary<string, List<string>> _collectiblesHints = new ();
         private static System.Random _random = new System.Random();
-        private Task CurrentTask { get; set; }
+        public Task CurrentTask { get; set; }
         
         private const string CubeTag = "Cube";
         private const string SphereTag = "Sphere";
