@@ -783,7 +783,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed93741c7d2a67b42a8ea7786b839df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 9033970814349918473, guid: 6023c2f16d065fa42bcd52bc30596822, type: 3}
+  obstacles:
+  - {fileID: 7262790853368832553, guid: 776da406b7a561b45be99758e2b21b5c, type: 3}
+  - {fileID: 6964103292492116413, guid: 10fc403fa9cf686438d2cd3e1be229ef, type: 3}
+  - {fileID: 4806931415079242370, guid: 287bd833ed9f55041881f39e65e770d0, type: 3}
+  - {fileID: 1806370008483339937, guid: 450375b2089eacc4a9eefc77972e009c, type: 3}
+  - {fileID: 6707610326336762086, guid: 8ad7ce0591b8cbb418dfc2a4f1dd7868, type: 3}
+  - {fileID: 3052786145037884313, guid: ffb96cf10d11fed419d4f3b28ad57fea, type: 3}
+  - {fileID: 5780034516089840320, guid: 1222b3d043e795241b40e21833cdc7bb, type: 3}
   collectibles:
   - {fileID: 6966121036707182036, guid: 372201b366003d34394381aca580a7c5, type: 3}
   - {fileID: 9219049817567903606, guid: 71b5fb1c02672844f84af0d07504e059, type: 3}
