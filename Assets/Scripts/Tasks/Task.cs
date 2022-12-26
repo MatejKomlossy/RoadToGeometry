@@ -10,8 +10,8 @@ namespace Tasks
         
         private Dictionary<string, int> _objectsToCollect = new();  //<tag, count>
         private Dictionary<string, string> _tagsHints;  //<tag, hint>
-        private const int MaxObjectKinds = 3;
-        private const int MaxOneObjectCount = 3;
+        private const int MaxObjectKinds = 1;
+        private const int MaxOneObjectCount = 4;
         private static System.Random _random;
         private const float ChanceToAddObject = 0.5f;
         private const int PointsPerObject = 10;
