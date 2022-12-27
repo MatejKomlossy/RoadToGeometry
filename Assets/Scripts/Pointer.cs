@@ -56,6 +56,12 @@ public class Pointer : MonoBehaviour
                 case "Level2Button":
                     PlayLevel2();
                     break;
+                case "Level3Button":
+                    PlayLevel3();
+                    break;
+                case "Level4Button":
+                    PlayLevel4();
+                    break;
                 case "SettingsButton":
                     OpenSettings();
                     break;
@@ -93,6 +99,16 @@ public class Pointer : MonoBehaviour
     public void PlayLevel2()
     {
         SceneManager.LoadScene("Level2");
+    }
+
+    public void PlayLevel3()
+    {
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void PlayLevel4()
+    {
+        SceneManager.LoadScene("Level4");
     }
 
     public void Explore()
