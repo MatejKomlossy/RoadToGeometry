@@ -46,7 +46,7 @@ namespace Tasks
 
         private Task CreateNewTask()
         {
-            return new Task(objectPrefabs, Hints());
+            return new Task(objectPrefabs, _collectiblesHints);
         }
 
         private void NewCurrentTask()
@@ -77,18 +77,6 @@ namespace Tasks
         private void OnGameOver()
         {
             gameOverScoreText.text = scoreText.text;
-        }
-
-        private Dictionary<string, string> Hints()
-        {
-            Dictionary<string, string> tagsHints = new();
-            foreach (var (tagStr, possibleHints) in _collectiblesHints)
-            {
-                var randomHint = possibleHints[_random.Next(possibleHints.Count)];
-                tagsHints.Add(tagStr, randomHint);
-            }
-
-            return tagsHints;
         }
     }
 }
