@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.data[4]
+      value: 
+      objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2 (2)
@@ -784,6 +792,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.data[4]
+      value: 
+      objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2 (1)
@@ -1246,6 +1262,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.data[4]
+      value: 
+      objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2 (3)
@@ -1303,6 +1327,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: collectibles.Array.data[4]
+      value: 
+      objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2
@@ -1590,6 +1622,7 @@ MonoBehaviour:
   - {fileID: 6966121036707182036, guid: 372201b366003d34394381aca580a7c5, type: 3}
   - {fileID: 9171932387685648234, guid: e19fc47fb43aa214fb25659a350f7e1e, type: 3}
   - {fileID: 9219049817567903606, guid: 71b5fb1c02672844f84af0d07504e059, type: 3}
+  - {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
   cubeHints:
   - Cube
   - Object with 6 faces
@@ -1603,6 +1636,17 @@ MonoBehaviour:
   - Prism
   - Object with A=6a^2
   - Object with V=a^3
+  cuboidHints:
+  - Cuboid
+  - Object with 6 faces
+  - Object with 12 edges
+  - Object with 8 vertices
+  - Object with only flat faces
+  - Object with flat base
+  - Object with rectangle base
+  - Prism
+  - Polyhedron
+  - Object with V=height*width*length
   sphereHints:
   - Sphere
   - Object with 1 face
@@ -1627,8 +1671,8 @@ MonoBehaviour:
   - Object with 1 face
   - Object with 0 edges
   - Object with 0 vertices
-  - Cylinder with hemisherical ends
-  - Sherocylinder
+  - Cylinder with hemispherical ends
+  - Spherocylinder
 --- !u!4 &2086735804
 Transform:
   m_ObjectHideFlags: 0

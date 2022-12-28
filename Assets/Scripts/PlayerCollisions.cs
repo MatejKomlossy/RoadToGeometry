@@ -14,10 +14,11 @@ public class PlayerCollisions : MonoBehaviour
     public GameObject taskManagerObject;
 
     private const string CubeTag = "Cube";
+    private const string CuboidTag= "Cuboid";
     private const string SphereTag = "Sphere";
     private const string CylinderTag = "Cylinder";
     private const string CapsuleTag = "Capsule";
-    private readonly string[] _collectibleTags = {CubeTag, SphereTag, CylinderTag, CapsuleTag};
+    private readonly string[] _collectibleTags = {CubeTag, CuboidTag, SphereTag, CylinderTag, CapsuleTag};
     
     private void OnTriggerEnter(Collider other)
     {

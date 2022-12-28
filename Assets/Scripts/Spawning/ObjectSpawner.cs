@@ -10,7 +10,7 @@ using UnityEngine.Serialization;
 public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be called from RoadSpawner
 {
     public List<GameObject> obstacles; 
-    public List<GameObject> collectibles;           //4
+    public List<GameObject> collectibles;           //5
     public List<GameObject> positionHolders;        //10
     public Transform obstacleParent;
     public Transform collectibleParent;
