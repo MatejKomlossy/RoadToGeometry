@@ -194,6 +194,7 @@ MonoBehaviour:
   correctObjectCollisionSound: {fileID: 1451595991}
   wrongObjectCollisionSound: {fileID: 3566415413686581898}
   taskManagerObject: {fileID: 348824458}
+  healthText: {fileID: 1377259776}
 --- !u!114 &323946531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +397,7 @@ MonoBehaviour:
   taskText: {fileID: 1377259775}
   scoreText: {fileID: 1377259772}
   gameOverScoreText: {fileID: 541950915}
+  player: {fileID: 323946525}
   objectPrefabs:
   - {fileID: 4631134093718072350, guid: e54d1f7fd6e32c74397ce4fa8acabbf7, type: 3}
   - {fileID: 6966121036707182036, guid: 372201b366003d34394381aca580a7c5, type: 3}
@@ -1535,6 +1537,17 @@ GameObject:
 --- !u!114 &1377259775 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3889771873937335496, guid: 6f0c6295c66292e48bf69ac0aa557a54, type: 3}
+  m_PrefabInstance: {fileID: 1377259771}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1377259776 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 634610159013885369, guid: 6f0c6295c66292e48bf69ac0aa557a54, type: 3}
   m_PrefabInstance: {fileID: 1377259771}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

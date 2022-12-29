@@ -16,6 +16,7 @@ namespace Tasks
         private const int MaxOneObjectCount = 4;
         private static System.Random _random;
         private const int PointsPerObject = 10;
+
         public int Points { get; private set; }
         
         public Task(List<GameObject> objectPrefabs, Dictionary<string, List<string>> tagsHints)
@@ -36,7 +37,6 @@ namespace Tasks
             _objectsToCollectCount = RandomObjectCount();
             foreach (string tag in _tagsHints.Keys)
             {
-                //Debug.Log(string.Join(",", _tagsHints[tag]));
                 foreach (string hint in _tagsHints[tag])
                 {
                     if (hint.Trim().Equals(_task.Trim()))

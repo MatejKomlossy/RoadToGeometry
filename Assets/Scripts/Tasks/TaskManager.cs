@@ -8,16 +8,17 @@ namespace Tasks
     public class TaskManager : MonoBehaviour
     {
         public TextMeshProUGUI taskText, scoreText, gameOverScoreText;
+        public GameObject player;
         public List<GameObject> objectPrefabs;
         public List<string> cubeHints;
         public List<string> cuboidHints;
         public List<string> sphereHints;
         public List<string> cylinderHints;
         public List<string> capsuleHints;
-        private Dictionary<string, List<string>> _collectiblesHints = new ();
+        private Dictionary<string, List<string>> _collectiblesHints = new();
         private static System.Random _random = new System.Random();
         public Task CurrentTask { get; set; }
-        
+
         private const string CubeTag = "Cube";
         private const string CuboidTag = "Cuboid";
         private const string SphereTag = "Sphere";
