@@ -11,6 +11,8 @@ TagManager:
   - Cylinder
   - Obstacle
   - Cuboid
+  - Button
+  - Toggle
   layers:
   - Default
   - TransparentFX

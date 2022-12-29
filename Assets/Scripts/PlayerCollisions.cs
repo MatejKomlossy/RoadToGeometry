@@ -26,10 +26,12 @@ public class PlayerCollisions : MonoBehaviour
         {
             if (other.CompareTag(tagStr))
             {
-                TaskManager taskManager = taskManagerObject.GetComponent<TaskManager>();
-                bool isObjectFromTheTask = taskManager.CurrentTask.IsObjectFromTheTask(other.gameObject);
-                if (isObjectFromTheTask) correctObjectCollisionSound.Play();
-                else wrongObjectCollisionSound.Play();
+                bool isObjectFromTheTask = taskManagerObject.GetComponent<TaskManager>().CurrentTask.IsObjectFromTheTask(other.gameObject);
+                if (PlayerPrefs.GetInt("SoundEffectsToggle") == 1)
+                {
+                    if (isObjectFromTheTask) correctObjectCollisionSound.Play();
+                    else wrongObjectCollisionSound.Play();
+                }
 
                 EventManager.Instance.ObjectCollected(other.gameObject);
                 Destroy(other.gameObject);
@@ -40,6 +42,9 @@ public class PlayerCollisions : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         transform.GetComponent<GameOver>().EndGame();
-        obstacleCollisionSound.Play();
+        if (PlayerPrefs.GetInt("SoundEffectsToggle") == 1)
+        {
+            obstacleCollisionSound.Play();
+        }
     }
 }

@@ -29,8 +29,14 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
 
     public void SpawnObjects()
     {
-        var availablePosHolders = SpawnObstacles(new List<GameObject>(positionHolders));
-        SpawnCollectibles(availablePosHolders);
+        if (PlayerPrefs.GetInt("ObstaclesToggle") == 1) { 
+            var availablePosHolders = SpawnObstacles(new List<GameObject>(positionHolders));
+            SpawnCollectibles(availablePosHolders);
+        } 
+        else
+        {
+            SpawnCollectibles(positionHolders);
+        }
     }
     
     private GameObject DoSpawnObject(List<GameObject> availablePosHolders, GameObject objectToSpawn, Transform parent, Vector3 shift)
