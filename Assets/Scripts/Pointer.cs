@@ -7,10 +7,12 @@ using UnityEngine.UI;
 
 public class Pointer : MonoBehaviour
 {
-
+    private const string buttonTag = "Button";
+    private const string toggleTag = "Toggle";
     private GameObject objectInSight = null;
     private Color normalColor = Color.black;
     private Color activeColor = new Color(0.54f, 0.32f, 0.61f, 1);
+    private Color activeColor2 = Color.white;
 
     public GameObject menu;
     public GameObject settings;
@@ -24,38 +26,21 @@ public class Pointer : MonoBehaviour
         {
             transform.position = hit.point;
 
-            if (hit.transform.gameObject.tag == "Button")
+            if (objectInSight != hit.transform.gameObject)
             {
-                if (objectInSight != hit.transform.gameObject)
-                {
-                    if (objectInSight != null && objectInSight.tag == "Button")
-                    {
-                        ChangeObjectColor(normalColor);
-                    }
-                    objectInSight = hit.transform.gameObject;
-                    ChangeObjectColor(activeColor);
-                }
-
-            }
-            else if (hit.transform.gameObject.tag == "Toggle")
-            {
+                ChangeColor(normalColor, normalColor);
                 objectInSight = hit.transform.gameObject;
+                ChangeColor(activeColor, activeColor2);
             }
-            else
+            else if (objectInSight.tag != buttonTag && objectInSight.tag != toggleTag)
             {
-                if (objectInSight != null && objectInSight.tag == "Button")
-                {
-                    ChangeObjectColor(normalColor);
-                }
+                ChangeColor(normalColor, normalColor);
                 objectInSight = null;
             }
         }
         else
         {
-            if (objectInSight != null && objectInSight.tag == "Button")
-            {
-                ChangeObjectColor(normalColor);
-            }
+            ChangeColor(normalColor, normalColor);
             objectInSight = null;
         }
 
@@ -67,23 +52,45 @@ public class Pointer : MonoBehaviour
 
     private void OnClick()
     {
-        if (objectInSight != null && objectInSight.tag == "Button")
+        if (objectInSight != null && objectInSight.tag == buttonTag)
         {
             OnButtonClick();
         }
-        else if (objectInSight != null && objectInSight.tag == "Toggle")
+        else if (objectInSight != null && objectInSight.tag == toggleTag)
         {
             OnToggleClick();
         }
     }
 
-    private void ChangeObjectColor(Color color)
+    private void ChangeColor(Color color, Color color2)
     {
-        Image img = null;
-        if (objectInSight.TryGetComponent<Image>(out img))
+        if (objectInSight == null) return;
+
+        if (objectInSight.tag == buttonTag)
+        {
+            ChangeButtonColor(color);
+        }
+        else if (objectInSight.tag == toggleTag)
+        {
+            ChangeToggleColor(color2);
+        }
+    }
+
+    private void ChangeButtonColor(Color color)
+    {
+        if (objectInSight.TryGetComponent<Image>(out Image img))
         {
             img.color = color;
         }
+    }
+
+    private void ChangeToggleColor(Color color)
+    {
+        ColorBlock cb = objectInSight.GetComponent<Toggle>().colors;
+        cb.normalColor = color;
+        objectInSight.GetComponent<Toggle>().colors = cb;
+
+        objectInSight.GetComponentInChildren<Text>().color = color;
     }
 
     private void OnButtonClick()
