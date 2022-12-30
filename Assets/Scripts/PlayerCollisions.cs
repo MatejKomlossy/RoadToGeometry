@@ -36,10 +36,10 @@ public class PlayerCollisions : MonoBehaviour
             {
                 TaskManager taskManager = taskManagerObject.GetComponent<TaskManager>();
                 bool isObjectFromTheTask = taskManager.CurrentTask.IsObjectFromTheTask(other.gameObject);
-                if (isObjectFromTheTask && PlayerPrefs.GetInt("SoundEffectsToggle") == 1) correctObjectCollisionSound.Play();
+                if (isObjectFromTheTask && PlayerPrefs.GetInt("SoundEffectsToggle") == 0) correctObjectCollisionSound.Play();
                 else if (!isObjectFromTheTask)
                 {
-                    if (PlayerPrefs.GetInt("SoundEffectsToggle") == 1) wrongObjectCollisionSound.Play();
+                    if (PlayerPrefs.GetInt("SoundEffectsToggle") == 0) wrongObjectCollisionSound.Play();
                     lives -= 1;
                 }
 
@@ -54,7 +54,7 @@ public class PlayerCollisions : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         transform.GetComponent<GameOver>().EndGame();
-        if (PlayerPrefs.GetInt("SoundEffectsToggle") == 1)
+        if (PlayerPrefs.GetInt("SoundEffectsToggle") == 0)
         {
             obstacleCollisionSound.Play();
         }

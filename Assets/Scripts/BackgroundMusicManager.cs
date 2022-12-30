@@ -6,12 +6,12 @@ public class BackgroundMusicManager : MonoBehaviour
 {
     void Update()
     {
-        if (PlayerPrefs.GetInt("BackgroundMusicToggle") != 1)
-        {
-            transform.gameObject.GetComponent<AudioSource>().mute = true;
-        } else
+        if (PlayerPrefs.GetInt("BackgroundMusicToggle") == 0)
         {
             transform.gameObject.GetComponent<AudioSource>().mute = false;
+        } else
+        {
+            transform.gameObject.GetComponent<AudioSource>().mute = true;
         }
     }
 }

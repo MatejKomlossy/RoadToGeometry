@@ -10,10 +10,10 @@ public class ValueManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt(transform.gameObject.name) == 1)
         {
-            transform.gameObject.GetComponent<Toggle>().isOn = true;
+            transform.gameObject.GetComponent<Toggle>().isOn = false;
         } else
         {
-            transform.gameObject.GetComponent<Toggle>().isOn = false;
+            transform.gameObject.GetComponent<Toggle>().isOn = true;
         }
     }
 

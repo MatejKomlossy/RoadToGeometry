@@ -139,10 +139,10 @@ public class Pointer : MonoBehaviour
     {
         if (objectInSight.GetComponent<Toggle>().isOn)
         {
-            PlayerPrefs.SetInt(objectInSight.name, 1);
+            PlayerPrefs.SetInt(objectInSight.name, 0);
         } else
         {
-            PlayerPrefs.SetInt(objectInSight.name, 0);
+            PlayerPrefs.SetInt(objectInSight.name, 1);
         }
     }
 
