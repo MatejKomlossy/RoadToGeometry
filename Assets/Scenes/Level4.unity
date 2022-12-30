@@ -131,9 +131,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 185736, guid: 77d24139ff84daf45b6b16f49067fa17, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 148854, guid: d1a625125fa453d44b0aaf9bfc5017f5, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 114438, guid: 0a562d2ec22f37341a8041be1f478971, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3902208015944514706, guid: 17bafb84952a01343b37f3776260be58, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[4]
+      value: 
+      objectReference: {fileID: 2038541983402941343, guid: 128796b2690aabf4883b2100633fe446, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[5]
+      value: 
+      objectReference: {fileID: 128852, guid: 62ba17fffe5d39b4a973d1fef8d3fc5a, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[6]
+      value: 
+      objectReference: {fileID: 467951067566595012, guid: 6090652c9a8bd6847b9d1a31d06bb2da, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[7]
+      value: 
+      objectReference: {fileID: 180958, guid: ce21b1068f316a949b41898d6b5d1d6b, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[8]
+      value: 
+      objectReference: {fileID: 177858, guid: 73d18ed494f69ad41b44fe6d2c7c54d4, type: 3}
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.data[4]
       value: 
@@ -807,9 +847,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 185736, guid: 77d24139ff84daf45b6b16f49067fa17, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 148854, guid: d1a625125fa453d44b0aaf9bfc5017f5, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 114438, guid: 0a562d2ec22f37341a8041be1f478971, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3902208015944514706, guid: 17bafb84952a01343b37f3776260be58, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[4]
+      value: 
+      objectReference: {fileID: 2038541983402941343, guid: 128796b2690aabf4883b2100633fe446, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[5]
+      value: 
+      objectReference: {fileID: 128852, guid: 62ba17fffe5d39b4a973d1fef8d3fc5a, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[6]
+      value: 
+      objectReference: {fileID: 467951067566595012, guid: 6090652c9a8bd6847b9d1a31d06bb2da, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[7]
+      value: 
+      objectReference: {fileID: 180958, guid: ce21b1068f316a949b41898d6b5d1d6b, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[8]
+      value: 
+      objectReference: {fileID: 177858, guid: 73d18ed494f69ad41b44fe6d2c7c54d4, type: 3}
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.data[4]
       value: 
@@ -1277,9 +1357,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 185736, guid: 77d24139ff84daf45b6b16f49067fa17, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 148854, guid: d1a625125fa453d44b0aaf9bfc5017f5, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 114438, guid: 0a562d2ec22f37341a8041be1f478971, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3902208015944514706, guid: 17bafb84952a01343b37f3776260be58, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[4]
+      value: 
+      objectReference: {fileID: 2038541983402941343, guid: 128796b2690aabf4883b2100633fe446, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[5]
+      value: 
+      objectReference: {fileID: 128852, guid: 62ba17fffe5d39b4a973d1fef8d3fc5a, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[6]
+      value: 
+      objectReference: {fileID: 467951067566595012, guid: 6090652c9a8bd6847b9d1a31d06bb2da, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[7]
+      value: 
+      objectReference: {fileID: 180958, guid: ce21b1068f316a949b41898d6b5d1d6b, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[8]
+      value: 
+      objectReference: {fileID: 177858, guid: 73d18ed494f69ad41b44fe6d2c7c54d4, type: 3}
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.data[4]
       value: 
@@ -1342,9 +1462,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 272690272}
     m_Modifications:
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 185736, guid: 77d24139ff84daf45b6b16f49067fa17, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 148854, guid: d1a625125fa453d44b0aaf9bfc5017f5, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 114438, guid: 0a562d2ec22f37341a8041be1f478971, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3902208015944514706, guid: 17bafb84952a01343b37f3776260be58, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[4]
+      value: 
+      objectReference: {fileID: 2038541983402941343, guid: 128796b2690aabf4883b2100633fe446, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[5]
+      value: 
+      objectReference: {fileID: 128852, guid: 62ba17fffe5d39b4a973d1fef8d3fc5a, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[6]
+      value: 
+      objectReference: {fileID: 467951067566595012, guid: 6090652c9a8bd6847b9d1a31d06bb2da, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[7]
+      value: 
+      objectReference: {fileID: 180958, guid: ce21b1068f316a949b41898d6b5d1d6b, type: 3}
+    - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: obstacles.Array.data[8]
+      value: 
+      objectReference: {fileID: 177858, guid: 73d18ed494f69ad41b44fe6d2c7c54d4, type: 3}
     - target: {fileID: 3252449473087368344, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: collectibles.Array.data[4]
       value: 
