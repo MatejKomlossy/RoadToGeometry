@@ -112,9 +112,6 @@ public class Pointer : MonoBehaviour
             case "SettingsButton":
                 OpenSettings();
                 break;
-            case "ExploreButton":
-                Explore();
-                break;
             case "ExitButton":
                 ExitApplication();
                 break;
@@ -164,11 +161,6 @@ public class Pointer : MonoBehaviour
     private void PlayLevel4()
     {
         SceneManager.LoadScene("Level4");
-    }
-
-    private void Explore()
-    {
-        //SceneManager.LoadScene("Explore");
     }
 
 
