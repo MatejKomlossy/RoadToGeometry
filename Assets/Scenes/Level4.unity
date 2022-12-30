@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: collectibles.Array.data[4]
       value: 
       objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
+    - target: {fileID: 5389535375128432418, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2 (2)
@@ -1404,6 +1408,10 @@ PrefabInstance:
       propertyPath: collectibles.Array.data[4]
       value: 
       objectReference: {fileID: 6966121036707182036, guid: 3af5cd35d50f2e64d89a08d5e3bdd52e, type: 3}
+    - target: {fileID: 5389535375128432418, guid: a9a634091ac24024291307ad27436e41, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6696013546526611242, guid: a9a634091ac24024291307ad27436e41, type: 3}
       propertyPath: m_Name
       value: RoadLevel2 (3)

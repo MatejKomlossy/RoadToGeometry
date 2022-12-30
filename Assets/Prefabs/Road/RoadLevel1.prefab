@@ -701,7 +701,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6341408924792136150}
   - component: {fileID: 6341408924792136155}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnTrigger
   m_TagString: SpawnTrigger
   m_Icon: {fileID: 0}
