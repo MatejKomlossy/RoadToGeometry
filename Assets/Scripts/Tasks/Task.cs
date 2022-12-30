@@ -7,17 +7,19 @@ namespace Tasks
     public class Task
     {
         private readonly List<GameObject> _objectPrefabs;
-        
-        private Dictionary<string, int> _objectsToCollect = new();  //<tag, count>
-        private Dictionary<string, string> _tagsHints;  //<tag, hint>
-        private const int MaxObjectKinds = 1;
+
+        private HashSet<string> _objectsToCollect = new();
+        private int _objectsToCollectCount;
+        private string _task;
+
+        private Dictionary<string, List<string>> _tagsHints;  //<tag, hint>
         private const int MaxOneObjectCount = 4;
         private static System.Random _random;
-        private const float ChanceToAddObject = 0.5f;
         private const int PointsPerObject = 10;
+
         public int Points { get; private set; }
         
-        public Task(List<GameObject> objectPrefabs, Dictionary<string, string> tagsHints)
+        public Task(List<GameObject> objectPrefabs, Dictionary<string, List<string>> tagsHints)
         {
             _random = new System.Random();
             _objectPrefabs = objectPrefabs;
@@ -28,22 +30,19 @@ namespace Tasks
 
         private void FillObjectsToCollect()
         {
-            var index = _random.Next(_objectPrefabs.Count);
-            var firstObject = _objectPrefabs[index];
-            _objectsToCollect.Add(firstObject.tag, RandomObjectCount());
-            var objectKinds = 1;
-            
-            var rest = _objectPrefabs.Where(o => !o.CompareTag(firstObject.tag)).ToList();
-            foreach (var objectPrefab in rest)
+            List<string> hints = _tagsHints.Values.SelectMany(x => x).ToHashSet().ToList();
+
+            var index = _random.Next(hints.Count);
+            _task = hints[index];
+            _objectsToCollectCount = RandomObjectCount();
+            foreach (string tag in _tagsHints.Keys)
             {
-                if (objectKinds >= MaxObjectKinds)
+                foreach (string hint in _tagsHints[tag])
                 {
-                    return;
-                }
-                if (_random.NextDouble() <= ChanceToAddObject)
-                {
-                    _objectsToCollect.Add(objectPrefab.tag, RandomObjectCount());
-                    objectKinds++;
+                    if (hint.Trim().Equals(_task.Trim()))
+                    {
+                        _objectsToCollect.Add(tag);
+                    }
                 }
             }
         }
@@ -56,9 +55,9 @@ namespace Tasks
         public void Collect(GameObject collectible)
         {
             var tag = collectible.tag;
-            if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
+            if (_objectsToCollect.Contains(tag) && _objectsToCollectCount > 0)
             {
-                _objectsToCollect[tag] -= 1;
+                _objectsToCollectCount -= 1;
             }
 
             if (IsCompleted())
@@ -70,7 +69,7 @@ namespace Tasks
         public bool IsObjectFromTheTask(GameObject collectible)
         {
             var tag = collectible.tag;
-            if (_objectsToCollect.ContainsKey(tag) && _objectsToCollect[tag] > 0)
+            if (_objectsToCollect.Contains(tag) && _objectsToCollectCount > 0)
             {
                 return true;
             }
@@ -80,27 +79,17 @@ namespace Tasks
         private bool IsCompleted()
         {
             return _objectsToCollect.Count == 0 ||
-                   _objectsToCollect.All(objectCount => objectCount.Value <= 0);
+                   _objectsToCollectCount <= 0;
         }
 
         private void ComputePoints()
         {
-            foreach (var objectCount in _objectsToCollect)
-            {
-                Points += objectCount.Value * PointsPerObject;
-            }
+           Points += _objectsToCollectCount * PointsPerObject;
         }
 
-        public List<string> TaskStrings()   //can be displayed in rows
+        public string TaskStrings()
         {
-            var result = new List<string>();
-            foreach (var (tagStr, count) in _objectsToCollect)
-            {
-                if(count <= 0) continue;
-                result.Add(count + "x " + _tagsHints[tagStr]);
-            }
-
-            return result;
+            return _objectsToCollectCount + "x " + _task;
         }
     }
 }

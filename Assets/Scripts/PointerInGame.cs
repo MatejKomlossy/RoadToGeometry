@@ -84,6 +84,6 @@ public class PointerInGame : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
