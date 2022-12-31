@@ -14,6 +14,7 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     public List<GameObject> positionHolders;        //10
     public Transform obstacleParent;
     public Transform collectibleParent;
+    public bool collectiblesNextToEachOther = true;
 
     private const int NumOfCollectibles = 2;
     private const int NumOfObstacles = 2;
@@ -98,6 +99,10 @@ public class ObjectSpawner : MonoBehaviour      //attached on a road GO. Will be
     
     private List<GameObject> PosHoldersAfterCollectible(List<GameObject> availablePosHolders, GameObject usedPosHolder)
     {
+        if (!collectiblesNextToEachOther)
+        {
+            return PosHoldersAfterObstacle(availablePosHolders, usedPosHolder);
+        }
         return availablePosHolders.Where(ph => ph != usedPosHolder).ToList();
     }
 

@@ -78,8 +78,7 @@ namespace Tasks
 
         private bool IsCompleted()
         {
-            return _objectsToCollect.Count == 0 ||
-                   _objectsToCollectCount <= 0;
+            return _objectsToCollectCount <= 0;
         }
 
         private void ComputePoints()
