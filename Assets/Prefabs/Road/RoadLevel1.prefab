@@ -788,9 +788,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
-  - {fileID: 7262790853368832553, guid: 776da406b7a561b45be99758e2b21b5c, type: 3}
-  - {fileID: 6964103292492116413, guid: 10fc403fa9cf686438d2cd3e1be229ef, type: 3}
-  - {fileID: 4806931415079242370, guid: 287bd833ed9f55041881f39e65e770d0, type: 3}
   - {fileID: 1806370008483339937, guid: 450375b2089eacc4a9eefc77972e009c, type: 3}
   - {fileID: 6707610326336762086, guid: 8ad7ce0591b8cbb418dfc2a4f1dd7868, type: 3}
   - {fileID: 3052786145037884313, guid: ffb96cf10d11fed419d4f3b28ad57fea, type: 3}
@@ -813,6 +810,7 @@ MonoBehaviour:
   - {fileID: 1491225030818469564}
   obstacleParent: {fileID: 7306501673701520241}
   collectibleParent: {fileID: 8658272510724787887}
+  collectiblesNextToEachOther: 0
 --- !u!1 &7037913278352492688
 GameObject:
   m_ObjectHideFlags: 0
