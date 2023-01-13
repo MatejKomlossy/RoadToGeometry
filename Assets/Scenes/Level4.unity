@@ -1217,7 +1217,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214433712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 25}
+  m_LocalPosition: {x: 0, y: 0, z: 28.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1227,7 +1227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -16.5, y: 2.19}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214433714
@@ -1649,7 +1649,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1950784340
 Transform:
   m_ObjectHideFlags: 0
@@ -1658,7 +1658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950784339}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.539627, y: -1.6029558, z: -23.177498}
+  m_LocalPosition: {x: 16.1, y: -3.98, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1817,8 +1817,12 @@ MonoBehaviour:
   - Regular polyhedron
   - Polyhedron
   - Prism
-  - Object with A=6a^2
-  - Object with V=a^3
+  - "Object with A=6*height\xB2"
+  - "Object with A=6*width\xB2"
+  - "Object with A=6*length\xB2"
+  - "Object with V=height\xB3"
+  - "Object with V=length\xB3"
+  - "Object with V=width\xB3"
   cuboidHints:
   - Cuboid
   - Object with 6 faces
@@ -1836,8 +1840,8 @@ MonoBehaviour:
   - Object with 0 edges
   - Object with 0 vertices
   - Object with 1 curved surface
-  - "Object with A=4\u03C0 * radius^2"
-  - "Object with V=(4/3)\u03C0 * radius^3"
+  - "Object with A=4\u03C0 * radius\xB2"
+  - "Object with V=(4/3)\u03C0 * radius\xB3"
   cylinderHints:
   - Cylinder
   - Object with 3 faces
@@ -1847,8 +1851,8 @@ MonoBehaviour:
   - Object with 1 curved surface
   - Object with circular base
   - Object with flat base
-  - "Object with A=2\u03C0 * radius * (height+radius)"
-  - "Object with V=\u03C0 * radius^2 * height"
+  - "Object with  A=2\u03C0 * radius * (height+radius)"
+  - "Object with V= \u03C0 * radius\xB2 * height"
   capsuleHints:
   - Capsule
   - Object with 1 face

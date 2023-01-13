@@ -420,8 +420,12 @@ MonoBehaviour:
   - Regular polyhedron
   - Polyhedron
   - Prism
-  - Object with A=6a^2
-  - Object with V=a^3
+  - "Object with A=6*height\xB2"
+  - "Object with A=6*width\xB2"
+  - "Object with A=6*length\xB2"
+  - "Object with V=height\xB3"
+  - "Object with V=length\xB3"
+  - "Object with V=width\xB3"
   cuboidHints:
   - Cuboid
   - Object with 6 faces
@@ -439,8 +443,8 @@ MonoBehaviour:
   - Object with 0 edges
   - Object with 0 vertices
   - Object with 1 curved surface
-  - "Object with A=4\u03C0 * radius^2"
-  - "Object with V=(4/3)\u03C0 * radius^3"
+  - "Object with A=4\u03C0 * radius\xB2"
+  - "Object with V=(4/3)\u03C0 * radius\xB3"
   cylinderHints:
   - Cylinder
   - Object with 3 faces
@@ -451,7 +455,7 @@ MonoBehaviour:
   - Object with circular base
   - Object with flat base
   - "Object with  A=2\u03C0 * radius * (height+radius)"
-  - "Object with V= \u03C0 * radius^2 * height"
+  - "Object with V= \u03C0 * radius\xB2 * height"
   capsuleHints:
   - Capsule
   - Object with 1 face
