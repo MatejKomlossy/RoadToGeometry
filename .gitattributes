@@ -1,34 +1,10 @@
-## Unity ##
-
-*.mat linguist-vendored
-*.anim linguist-vendored
-*.unity linguist-vendored
-*.prefab linguist-vendored
-*.physicsMaterial2D linguist-vendored
-*.physicMaterial linguist-vendored
-*.asset linguist-vendored
-*.meta linguist-vendored
-*.controller linguist-vendored
-
-
-
-#Image
-*.jpg linguist-vendored
-*.jpeg linguist-vendored
-*.png linguist-vendored
-*.gif linguist-vendored
-*.psd linguist-vendored
-*.ai linguist-vendored
-
-#Audio
-*.mp3 linguist-vendored
-*.wav linguist-vendored
-*.ogg linguist-vendored
-
-
-#3D Object
-*.FBX linguist-vendored
-*.fbx linguist-vendored
-*.blend linguist-vendored
-*.obj linguist-vendored
-
+Audio/** linguist-vendored
+Images/** linguist-vendored
+Import/** linguist-vendored
+Materials/** linguist-vendored
+Plugins/** linguist-vendored
+Prefabs/** linguist-vendored
+Samples/** linguist-vendored
+Scenes/** linguist-vendored
+TextMeshPro/** linguist-vendored
+XR/** linguist-vendored
