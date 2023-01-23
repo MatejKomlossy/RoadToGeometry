@@ -1,55 +1,34 @@
 ## Unity ##
 
-*.cs diff=csharp text
-*.cginc text
-*.shader text
-
-*.mat merge=unityyamlmerge eol=lf
-*.anim merge=unityyamlmerge eol=lf
-*.unity merge=unityyamlmerge eol=lf
-*.prefab merge=unityyamlmerge eol=lf
-*.physicsMaterial2D merge=unityyamlmerge eol=lf
-*.physicMaterial merge=unityyamlmerge eol=lf
-*.asset merge=unityyamlmerge eol=lf
-*.meta merge=unityyamlmerge eol=lf
-*.controller merge=unityyamlmerge eol=lf
+*.mat linguist-vendored
+*.anim linguist-vendored
+*.unity linguist-vendored
+*.prefab linguist-vendored
+*.physicsMaterial2D linguist-vendored
+*.physicMaterial linguist-vendored
+*.asset linguist-vendored
+*.meta linguist-vendored
+*.controller linguist-vendored
 
 
-## git-lfs ##
 
 #Image
-*.jpg filter=lfs diff=lfs merge=lfs -text
-*.jpeg filter=lfs diff=lfs merge=lfs -text
-*.png filter=lfs diff=lfs merge=lfs -text
-*.gif filter=lfs diff=lfs merge=lfs -text
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.ai filter=lfs diff=lfs merge=lfs -text
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.png linguist-vendored
+*.gif linguist-vendored
+*.psd linguist-vendored
+*.ai linguist-vendored
 
 #Audio
-*.mp3 filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text
-*.ogg filter=lfs diff=lfs merge=lfs -text
+*.mp3 linguist-vendored
+*.wav linguist-vendored
+*.ogg linguist-vendored
 
-#Video
-*.mp4 filter=lfs diff=lfs merge=lfs -text
-*.mov filter=lfs diff=lfs merge=lfs -text
 
 #3D Object
-*.FBX filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.blend filter=lfs diff=lfs merge=lfs -text
-*.obj filter=lfs diff=lfs merge=lfs -text
+*.FBX linguist-vendored
+*.fbx linguist-vendored
+*.blend linguist-vendored
+*.obj linguist-vendored
 
-#ETC
-*.a filter=lfs diff=lfs merge=lfs -text
-*.exr filter=lfs diff=lfs merge=lfs -text
-*.tga filter=lfs diff=lfs merge=lfs -text
-*.pdf filter=lfs diff=lfs merge=lfs -text
-*.zip filter=lfs diff=lfs merge=lfs -text
-*.dll filter=lfs diff=lfs merge=lfs -text
-*.unitypackage filter=lfs diff=lfs merge=lfs -text
-*.aif filter=lfs diff=lfs merge=lfs -text
-*.ttf filter=lfs diff=lfs merge=lfs -text
-*.rns filter=lfs diff=lfs merge=lfs -text
-*.reason filter=lfs diff=lfs merge=lfs -text
-*.lxo filter=lfs diff=lfs merge=lfs -text
